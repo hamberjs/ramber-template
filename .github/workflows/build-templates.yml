@@ -15,4 +15,4 @@ jobs:
           SSH_KEY: ${{ secrets.SSH_KEY }}
           SSH_KEY_ROLLUP: ${{ secrets.SSH_KEY_ROLLUP }}
           SSH_KEY_WEBPACK: ${{ secrets.SSH_KEY_WEBPACK }}
-        run: _template/build.sh
+        run: chmod +x _template/build.sh && _template/build.sh
