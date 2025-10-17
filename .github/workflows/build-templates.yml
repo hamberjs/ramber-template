@@ -18,7 +18,7 @@ jobs:
       - name: Build templates
         env:
           CI: true
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
           chmod +x _template/build.sh
           chmod +x _template/create-branches.sh
