@@ -12,9 +12,9 @@ const posts = [
 		title: 'What is Ramber?',
 		slug: 'what-is-ramber',
 		html: `
-			<p>First, you have to know what <a href='https://hamberjs.web.app'>Hamber</a> is. Hamber is a UI framework with a bold new idea: rather than providing a library that you write code with (like React or Vue, for example), it's a compiler that turns your components into highly optimized vanilla JavaScript.
+			<p>First, you have to know what <a href='https://hamberjs.web.app'>Hamber</a> is. Hamber is a UI framework with a bold new idea: rather than providing a library that you write code with (like React or Kdu, for example), it's a compiler that turns your components into highly optimized vanilla JavaScript.</p>
 
-			<p>Ramber is a Next.js-style framework built around Hamber. It makes it embarrassingly easy to create extremely high performance web apps. Out of the box, you get:</p>
+			<p>Ramber is a Next.js-style framework (<a href='blog/how-is-ramber-different-from-next'>more on that here</a>) built around Hamber. It makes it embarrassingly easy to create extremely high performance web apps. Out of the box, you get:</p>
 
 			<ul>
 				<li>Code-splitting, dynamic imports and hot module replacement, powered by webpack</li>
@@ -32,7 +32,7 @@ const posts = [
 		slug: 'how-to-use-ramber',
 		html: `
 			<h2>Step one</h2>
-			<p>Create a new project:</p>
+			<p>Create a new project, using <a href='https://github.com/Rich-Harris/degit'>degit</a>:</p>
 
 			<pre><code>npx degit "hamberjs/ramber-template#rollup" my-app
 			cd my-app
@@ -57,7 +57,7 @@ const posts = [
 		html: `
 			<p>In war, the soldiers who build bridges, repair roads, clear minefields and conduct demolitions — all under combat conditions — are known as <em>rambers</em>.</p>
 
-			<p>For web developers, the stakes are generally lower than those for combat engineers. But we face our own hostile environment: underpowered devices, poor network connections, and the complexity inherent in front-end engineering. Ramber, which is short for <strong>S</strong>velte <strong>app</strong> mak<strong>er</strong>, is your courageous and dutiful ally.</p>
+			<p>For web developers, the stakes are generally lower than those for combat engineers. But we face our own hostile environment: underpowered devices, poor network connections, and the complexity inherent in front-end engineering.</p>
 		`
 	},
 

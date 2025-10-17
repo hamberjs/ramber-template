@@ -10,6 +10,12 @@ const dev = mode === 'development';
 const alias = { hamber: path.resolve('node_modules', 'hamber') };
 const extensions = ['.mjs', '.js', '.json', '.hamber', '.html'];
 const mainFields = ['hamber', 'module', 'browser', 'main'];
+const fileLoaderRule = {
+	test: /\.(png|jpe?g|gif)$/i,
+	use: [
+		'file-loader',
+	]
+};
 
 module.exports = {
 	client: {
@@ -23,12 +29,18 @@ module.exports = {
 					use: {
 						loader: 'hamber-loader',
 						options: {
-							dev,
-							hydratable: true,
+							compilerOptions: {
+								dev,
+								hydratable: true
+							},
+							// Webpack 4 uses acorn v6 which doesn't work with HMR
+							// Use overrides from npm or resolutions from yarn to set minimal
+							// acorn version to v7+
 							hotReload: false
 						}
 					}
-				}
+				},
+				fileLoaderRule
 			]
 		},
 		mode,
@@ -55,13 +67,16 @@ module.exports = {
 					use: {
 						loader: 'hamber-loader',
 						options: {
-							css: false,
-							generate: 'ssr',
-							hydratable: true,
-							dev
+							compilerOptions: {
+								css: false,
+								generate: 'ssr',
+								hydratable: true,
+								dev
+							},
 						}
 					}
-				}
+				},
+				fileLoaderRule
 			]
 		},
 		mode,

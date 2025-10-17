@@ -1,15 +1,21 @@
 <!doctype html>
-<html lang='en'>
+<html lang="en">
 <head>
-	<meta charset='utf-8'>
-	<meta name='viewport' content='width=device-width,initial-scale=1.0'>
-	<meta name='theme-color' content='#333333'>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="theme-color" content="#333333">
 
 	%ramber.base%
 
-	<link rel='stylesheet' href='global.css'>
-	<link rel='manifest' href='manifest.json' crossorigin='use-credentials'>
-	<link rel='icon' type='image/png' href='favicon.png'>
+	<link rel="stylesheet" href="global.css">
+	<link rel="manifest" href="manifest.json" crossorigin="use-credentials">
+	<link rel="icon" type="image/png" href="favicon.png">
+	<link rel="apple-touch-icon" href="logo-192.png">
+
+	<!-- Ramber creates a <script> tag containing `src/client.js`
+	     and anything else it needs to hydrate the app and
+	     initialise the router -->
+	%ramber.scripts%
 
 	<!-- Ramber generates a <style> tag containing critical CSS
 	     for the current page. CSS for the rest of the app is
@@ -23,11 +29,6 @@
 <body>
 	<!-- The application will be rendered inside this element,
 	     because `src/client.js` references it -->
-	<div id='ramber'>%ramber.html%</div>
-
-	<!-- Ramber creates a <script> tag containing `src/client.js`
-	     and anything else it needs to hydrate the app and
-	     initialise the router -->
-	%ramber.scripts%
+	<div id="ramber">%ramber.html%</div>
 </body>
 </html>

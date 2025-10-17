@@ -3,8 +3,8 @@ cd "$(dirname "$0")"
 
 if [ "$CI" ]; then
 	(umask 0077; echo "$SSH_KEY" > ~/ssh_key; echo "$SSH_KEY_ROLLUP" > ~/ssh_key_rollup; echo "$SSH_KEY_WEBPACK" > ~/ssh_key_webpack)
-	git config user.email 'kn145660@gmail.com'
-	git config user.name 'khanhduy1407'
+	git config user.email 'noreply@ramberjs.web.app'
+	git config user.name '[bot]'
 fi
 
 # branch names
