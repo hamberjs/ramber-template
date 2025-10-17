@@ -3,16 +3,23 @@ on:
   push:
     branches:
       - master
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-      -
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build templates
         env:
           CI: true
-          SSH_KEY: ${{ secrets.SSH_KEY }}
-          SSH_KEY_ROLLUP: ${{ secrets.SSH_KEY_ROLLUP }}
-          SSH_KEY_WEBPACK: ${{ secrets.SSH_KEY_WEBPACK }}
-        run: chmod +x _template/build.sh && chmod +x _template/create-branches.sh && _template/build.sh
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          chmod +x _template/build.sh
+          chmod +x _template/create-branches.sh
+          _template/build.sh
