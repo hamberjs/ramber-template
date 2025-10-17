@@ -249,7 +249,7 @@ function configureVsCode() {
 		fs.mkdirSync(dir);
 	}
 
-	createFile(path.join(projectRoot, '.vscode', 'extensions.json'), `{"recommendations": ["hamber.hamber-vscode"]}`);
+	createFile(path.join(projectRoot, '.vscode', 'extensions.json'), `{"recommendations": ["hamberjs.hamber-vscode"]}`);
 }
 
 function deleteThisScript() {
