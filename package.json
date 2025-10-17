@@ -1,0 +1,24 @@
+{
+  "name": "TODO",
+  "description": "TODO",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "ramber dev",
+    "build": "ramber build",
+    "export": "ramber export",
+    "start": "node __ramber__/build"
+  },
+  "dependencies": {
+    "compression": "^1.7.1",
+    "polka": "next",
+    "sirv": "^1.0.0"
+  },
+  "devDependencies": {
+    "hamber": "^3.59.2",
+    "ramber": "^0.29.4",
+    "file-loader": "^6.0.0",
+    "hamber-loader": "^2.9.0",
+    "webpack": "^4.46.0",
+    "webpack-modules": "^1.0.0"
+  }
+}
