@@ -230,7 +230,7 @@ function updateServiceWorker() {
 
 function createTsConfig() {
 	const tsconfig = `{
-		"extends": "@tsconfig/hamber/tsconfig.json",
+		"extends": "tsconfig-hamber/tsconfig.json",
 		"compilerOptions": {
 			"lib": ["DOM", "ES2017", "WebWorker"]
 		},
