@@ -2,8 +2,8 @@
 cd "$(dirname "$0")"
 
 if [ "$CI" ]; then
-	git config user.email 'noreply@ramberjs.web.app'
-	git config user.name '[bot]'
+	git config user.email 'nkduy.dev@gmail.com'
+	git config user.name 'NKDuy [bot]'
 fi
 
 # branch names
