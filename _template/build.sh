@@ -2,7 +2,6 @@
 cd "$(dirname "$0")"
 
 if [ "$CI" ]; then
-	(umask 0077; echo "$SSH_KEY" > ~/ssh_key; echo "$SSH_KEY_ROLLUP" > ~/ssh_key_rollup; echo "$SSH_KEY_WEBPACK" > ~/ssh_key_webpack)
 	git config user.email 'noreply@ramberjs.web.app'
 	git config user.name '[bot]'
 fi
@@ -13,7 +12,12 @@ WEBPACK=webpack
 
 ./create-branches.sh $ROLLUP $WEBPACK
 
-# force push rollup and webpack branches and repos
-GIT_SSH_COMMAND='ssh -o StrictHostKeyChecking=accept-new -i ~/ssh_key' git push git@github.com:hamberjs/ramber-template.git $ROLLUP $WEBPACK -f
-GIT_SSH_COMMAND='ssh -o StrictHostKeyChecking=accept-new -i ~/ssh_key_rollup' git push git@github.com:hamberjs/ramber-template-rollup.git $ROLLUP:master -f
-GIT_SSH_COMMAND='ssh -o StrictHostKeyChecking=accept-new -i ~/ssh_key_webpack' git push git@github.com:hamberjs/ramber-template-webpack.git $WEBPACK:master -f
+# force push rollup and webpack branches and repos using HTTPS + token
+# Expected: TOKEN environment variable available
+REPO_MAIN="hamberjs/ramber-template"
+REPO_ROLLUP="hamberjs/ramber-template-rollup"
+REPO_WEBPACK="hamberjs/ramber-template-webpack"
+
+git push "https://$TOKEN@github.com/$REPO_MAIN.git" $ROLLUP $WEBPACK -f
+git push "https://$TOKEN@github.com/$REPO_ROLLUP.git" $ROLLUP:master -f
+git push "https://$TOKEN@github.com/$REPO_WEBPACK.git" $WEBPACK:master -f
